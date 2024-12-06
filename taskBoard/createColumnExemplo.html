@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Coluna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .form-container input, .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-container button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-container button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Criar Coluna</h2>
+        <dev id="createColumnForm">
+            <label for="boardId">Board ID</label>
+            <input type="number" id="boardId" name="boardId" value="1" required>
+
+            <label for="name">Nome da Coluna</label>
+            <input type="text" id="name" name="name" placeholder="Nome da coluna" required>
+
+            <label for="position">Posição</label>
+            <input type="number" id="position" name="position" value="0" required>
+
+            <label for="isActive">Ativo</label>
+            <input type="checkbox" id="isActive" name="isActive" checked>
+
+            <button type="submit" id="submit">Criar Coluna</button>
+        </dev>
+        
+        <div class="message" id="responseMessage"></div>
+    </div>
+
+    <script type="module">
+        import { API_BASE_URL } from "./config/apiConfig.js";
+        function createColumn(columnData) {
+            
+            const endpoint = `${API_BASE_URL}/Column`;
+
+            fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(columnData),
+            })
+            .then((response) => {
+                if (!response.ok) {
+                    return response.json().then((errorData) => {
+                        throw errorData;
+                    });
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log('Coluna criada com sucesso:', data);
+                document.getElementById('responseMessage').textContent = 'Coluna criada com sucesso!';
+                document.getElementById('responseMessage').classList.remove('error');
+                document.getElementById('responseMessage').classList.add('success');
+            })
+            .catch((errorData) => {
+                console.error('Erro ao criar coluna:', errorData);
+                // Exibir a mensagem de erro
+                if (errorData.Errors && errorData.Errors.length > 0) {
+                    document.getElementById('responseMessage').textContent = errorData.Errors.join(', ');
+                } else {
+                    document.getElementById('responseMessage').textContent = 'Erro ao criar coluna.';
+                }
+                document.getElementById('responseMessage').classList.remove('success');
+                document.getElementById('responseMessage').classList.add('error');
+            });
+        }
+
+        document.getElementById('submit').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const boardId = document.getElementById('boardId').value;
+            const name = document.getElementById('name').value;
+            const position = document.getElementById('position').value;
+            const isActive = document.getElementById('isActive').checked;
+
+            const columnData = {
+                BoardId: boardId,
+                Name: name,
+                Position: position,
+                IsActive: true
+            };
+
+            createColumn(columnData);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,652 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    background-color:  #77dd7a;;
+  }
+
+  .dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+  
+  .dark-mode .navbar, .dark-mode .dropdown-content, .dark-mode .column, .dark-mode .task {
+    background-color: #333;
+    color: white;
+  }
+  
+  .dark-mode input, .dark-mode button {
+    background-color: #555;
+    color: white;
+    border: 1px solid #444;
+  }
+  
+  .dark-mode-switch input {
+    transform: scale(1.5);
+  }
+
+  .dark-mode #dropdown-content {
+    background-color: #333; /* Cor do fundo no modo escuro */
+    color: white; /* Cor do texto */
+    box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.2); /* Sombra mais clara no modo escuro */
+}
+
+/* Estilo dos itens do dropdown */
+.dark-mode #dropdown-content li {
+    background-color: #333;
+    color: white;
+}
+
+/* Mudar o fundo e a cor do texto quando um item do dropdown é hover */
+.dark-mode #dropdown-content li:hover {
+    background-color: #555;
+    color: white;
+}
+  
+
+  .hidden {
+    display: none;
+  }
+  #createColumnForm button:hover {
+    background-color: #2f9032;
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    #createColumnForm {
+      max-width: 100%;
+      padding: 15px;
+    }
+    #createColumnForm label {
+      font-size: 13px;
+    }
+    #createColumnForm input {
+      font-size: 13px;
+    }
+    #createColumnForm button {
+      font-size: 14px;
+    }
+  }
+  
+  /* Estilos para o modo escuro */
+  body.dark-mode #createColumnForm {
+    background-color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  body.dark-mode #createColumnForm label {
+    color: #fff;
+  }
+  
+  body.dark-mode #createColumnForm input {
+    background-color: #555;
+    border: 1px solid #444;
+    color: #fff;
+  }
+  
+  body.dark-mode #createColumnForm input:focus {
+    border-color: #007bff;
+  }
+  
+  body.dark-mode #createColumnForm button {
+    background-color: #3e8e41;
+    color: #fff;
+  }
+  
+  body.dark-mode #createColumnForm button:hover {
+    background-color: #2f9032;
+  }
+   
+  #NAVbar {
+    color: white;
+    background-color: black;
+    position: fixed;
+    top: 0; 
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: left;
+    background-color: black;
+    padding: 0 0 0 0;
+    z-index: 1000; 
+    display: flex;
+
+
+  } 
+
+
+   #Grello {
+      
+      font-size: 50px;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+       
+    } 
+     #Trollface {
+       height: 70px;;
+      width: 70px;
+       
+       }
+    
+
+      
+
+ 
+
+#MainDiv {
+  position: fixed;
+  display: flex;
+  margin-top: 100px;
+  background-color: #333;
+  height: 80px;
+  width: 100%;          
+  
+  
+  
+ 
+} 
+
+#email-display{
+        display: flex;
+        align-items: center;
+        color: white;
+        justify-content: flex-end;
+       width: 80%;
+        font-size: 15px;
+        font-weight: bold;
+        
+       }
+
+  #ModoPreto {
+    display: flex;
+     color: white;
+     align-items: center;
+    width: 20%;
+     justify-content: flex-end;
+    font-size: 10px;
+     
+    
+    
+  }
+  
+  #LogOut {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    width: 10%;
+    align-items: center;
+    font-size: 10px;
+         
+  }
+
+  #LogOut:hover{
+
+    color:#afafaf;
+    cursor:pointer;
+  }
+
+
+  .dropdown {
+    margin-left: 10px;
+    margin-top: 10px;
+    position: fixed;
+    transform: translate(0px, 100px);
+       
+      }
+
+      
+
+  .dropdown :hover{
+    position: relative;
+     
+
+}
+
+  .dropdown-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    
+    
+    
+  }
+
+  .dropdown-button:hover {
+    background-color: #2f9032;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  #dropdown-content  {
+    display: none ;
+    position: fixed;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    max-height: 400px;  
+    overflow-y: auto;   
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    cursor: pointer;
+      list-style: none;
+      padding: 20px;
+      border-radius: 10px;
+      
+    
+  }
+
+  
+
+  
+
+
+ 
+  
+
+  #dropdown-content > li:hover {
+    background-color: #ddd; 
+    border-radius: 8px;
+
+  }
+
+  /* Personalizando a barra de rolagem */
+#dropdown-content::-webkit-scrollbar {
+  width: 8px; /* Largura da barra vertical */
+  height: 8px; /* Altura da barra horizontal (caso exista) */
+  
+}
+
+/* Estilo do "track" da barra (fundo da barra de rolagem) */
+#dropdown-content::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Cor do fundo */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Estilo do "thumb" (parte que você arrasta) */
+#dropdown-content::-webkit-scrollbar-thumb {
+  background: #888; /* Cor do "thumb" */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Estilo do "thumb" ao passar o mouse */
+#dropdown-content::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Cor do "thumb" ao passar o mouse */
+}
+
+  
+
+.toggle-switch {
+  
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50px;
+  height: 22px;
+  color:white;
+  margin-top: 40px;
+  transform: translate(-70px, 0px);
+  
+}
+
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+   
+}
+
+
+.toggle-switch label {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 30px;
+  width: 50px;
+  height: 100%;
+  
+  transition: background-color 0.3s ease;
+}
+
+
+.toggle-switch label::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+   
+  transition: transform 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.toggle-switch input:checked + label {
+  background-color: #4CAF50;
+}
+
+.toggle-switch input:checked + label::after {
+  transform: translateX(26px); 
+  }
+  
+  #columns-display{
+display: flex; 
+
+padding-top: 220px;
+margin-left: 25px; 
+gap: 60px;
+overflow: hidden;
+overflow-x: auto;
+
+  }
+  /* Personalizando a barra de rolagem */
+  #columns-display::-webkit-scrollbar {
+    width: 8px; /* Largura da barra vertical */
+    height: 8px; /* Altura da barra horizontal (caso exista) */
+    
+  }
+  
+  /* Estilo do "track" da barra (fundo da barra de rolagem) */
+  #columns-display::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do fundo */
+    border-radius: 10px; /* Bordas arredondadas */
+  }
+  
+  /* Estilo do "thumb" (parte que você arrasta) */
+  #columns-display::-webkit-scrollbar-thumb {
+    background: #888; /* Cor do "thumb" */
+    border-radius: 10px; /* Bordas arredondadas */
+  }
+  
+  /* Estilo do "thumb" ao passar o mouse */
+  #dcolumns-display::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor do "thumb" ao passar o mouse */
+  }
+  
+ 
+
+     .column h3 {
+    margin: 10px 0;  
+  justify-content: center;
+  align-items: center;
+  align-items: column;
+  display: flex;
+  word-wrap: break-word;  
+     width: 200px;  
+     font-weight: lighter;         
+  }
+
+
+
+
+  .column {
+    width: 200px;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+     overflow:hidden ;    
+     min-width: 200px;
+     word-break: break-all;
+    
+    
+    
+      
+  }
+  
+  .delete-column-btn {
+    
+    font-size: 12px;
+    font-weight: bold;
+    color: white; /* Cor do texto */
+    background-color: #f44336; /* Cor de fundo vermelha */
+    border: none;
+    border-radius: 50%;
+    width: 20px; /* Tamanho do botão */
+    height: 20px; /* Tamanho do botão */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+ 
+    
+    
+  }
+  
+  .delete-column-btn:hover {
+    background-color: #d32f2f; /* Cor de fundo quando o botão é hover */
+    transform: scale(1.1); /* Aumenta o botão ligeiramente quando em hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+  }
+
+
+  
+
+
+    .tasks-display{
+
+      display: flex;
+      flex-direction:  column;
+       padding-top: 0px;
+      
+
+    }
+
+
+
+  .task{
+    display: flex;
+  flex-direction:  column;
+  align-items: center;
+    margin-bottom: 10px;
+    color: #6b6b6b;
+    
+
+  }
+
+  .task p{
+
+    margin: 10px 0;  
+    justify-content: center;
+    align-items: center;
+    align-items: column;
+    display: flex;
+    word-wrap: break-word;  
+       width: 200px;  
+       font-weight: lighter;    
+
+  }
+
+  
+   
+  .form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+.form-container h2 {
+    text-align: center;
+}
+
+.form-container label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.form-container input, .form-container button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-container button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+.form-container button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.message {
+    text-align: center;
+    font-size: 16px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+  
+
+ 
+   
+
+.open-modal-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.open-modal-btn:hover {
+  background-color: #2f9032;
+}
+
+/* Estilo do modal */
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+}
+
+#createColumnForm {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  max-width: 400px;
+  width: 100%;
+}
+
+
+#createColumnForm label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+  font-weight: bold;
+}
+
+#createColumnForm input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+
+#createColumnForm input:focus {
+  border-color: #007bff;
+}
+
+
+#createColumnForm button {
+  background-color: #4CAF50;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Mudança de cor no hover */
+#createColumnForm button:hover {
+  background-color: #2f9032;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  #createColumnForm {
+    max-width: 100%;
+    padding: 15px;
+  }
+  #createColumnForm label {
+    font-size: 13px;
+  }
+  #createColumnForm input {
+    font-size: 13px;
+  }
+  #createColumnForm button {
+    font-size: 14px;
+  }
+}

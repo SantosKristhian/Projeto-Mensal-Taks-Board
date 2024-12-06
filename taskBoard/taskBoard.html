@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskBoard</title>
+  <link rel="stylesheet" href="./styles/global.css">
+ 
+
+</head>
+<body>
+ 
+  <body>
+    
+    
+  <nav id="NAVbar">
+       
+       <img id ="Trollface"src="/img/Trollface.png">
+       <h1 id="Grello">Trella</h1>     
+         
+ </nav>
+  
+<div id="MainDiv">
+  <div id="email-display">
+    </div>
+          <div id="LogOut">
+            <h1 >Log out</h1>
+         </div>  
+                <div id="ModoPreto">
+                  <h1 >Dark Mode</h1>
+                  <div  class="toggle-switch"> 
+                   <input type="checkbox" id="switch" />
+                  <label for="switch"> </label>
+                 </div>     
+              </div>
+          </div> 
+   
+       <div class="dropdown" >
+               <button class="dropdown-button " >Boards</button>
+              <ul class="hidden" id="dropdown-content"></ul>
+          </div>
+                <div id="columns-display">
+               <h1></h1>  
+                 <div id="tasks-display">
+            </div>
+         </div>
+         
+         <br>
+         <button id="openModalButton" class="open-modal-btn">Criar Nova Coluna</button>
+         
+         <div id="createColumnModal" class="modal hidden">
+          <div class="modal-content">
+            <span class="close-button" id="closeModalButton">&times;</span>
+            <h2></h2>
+            <form id="createColumnForm">
+              <label for="boardId">Board ID</label>
+              <input type="number" id="boardId" name="boardId" value="1" required>
+        
+              <label for="name">Nome da Coluna</label>
+              <input type="text" id="name" name="name" placeholder="Nome da coluna" required>
+        
+              <label for="position">Posição</label>
+              <input type="number" id="position" name="position" value="0" required>
+        
+              <button type="submit" id="submit">Criar Coluna</button>
+            </form>
+            <div class="message" id="responseMessage"></div>
+          </div>
+        </div>
+
+   <script type="module" src="/scripts/pages/taskBoard.js"></script>
+   <script type="module" src="./scripts/pages/EmailDisplay.js"></script>
+  </body>
+  </html>
+ 
+ 
+</body>
+</html>
